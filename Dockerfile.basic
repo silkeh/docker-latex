@@ -1,7 +1,7 @@
 FROM debian:latest
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -qqy wget perl-tk fontconfig
+RUN apt-get update -qq && apt-get install -qqy fontconfig gnupg2 perl-tk wget
 
 # Install TeX Live
 COPY install_texlive.sh .

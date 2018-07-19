@@ -1,3 +1,5 @@
 FROM silkeh/latex:basic
 
-RUN tlmgr install scheme-medium
+# Install scheme-medium with explicit path for mtxrun
+RUN PATH="$(kpsewhich --var-value SELFAUTOLOC):$PATH" \
+    tlmgr install scheme-medium
