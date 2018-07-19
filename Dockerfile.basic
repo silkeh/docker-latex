@@ -1,0 +1,11 @@
+FROM debian:stable
+
+# Install dependencies
+RUN apt-get update -qq && apt-get install -qqy wget perl-tk fontconfig
+
+# Install TeX Live
+COPY install_texlive.sh .
+RUN ./install_texlive.sh
+
+# Cleanup
+RUN rm -rf /var/lib/apt/lists/* ./install_texlive.sh
