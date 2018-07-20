@@ -15,6 +15,9 @@ The tags correspond to the installation schemes:
   > BasicTeX variant.  It adds XeTeX, MetaPost, various
   > hyphenations, and some recommended packages to scheme-basic.
 
+- `context` (600 MB)
+  > This is the TeX Live scheme for installing ConTeXt.
+
 - `medium` (800 MB)
   > This is the medium TeX Live collection: it contains plain TeX,
   > LaTeX, many recommended packages, and support for most European
