@@ -1,0 +1,5 @@
+FROM silkeh/latex:full
+
+RUN wget -qO pandoc.deb "https://github.com/jgm/pandoc/releases/download/2.4/pandoc-2.4-1-amd64.deb" && \
+    dpkg -i pandoc.deb && \
+    rm pandoc.deb
