@@ -1,9 +1,7 @@
-FROM debian:latest
+FROM alpine:latest
 
 # Install dependencies
-RUN apt-get update -qq && \
-    apt-get install -qqy fontconfig gnupg2 perl-tk wget && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add bash fontconfig gnupg perl rsync wget
 
 # Install TeX Live
 COPY install_texlive.sh .
