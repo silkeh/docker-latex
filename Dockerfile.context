@@ -1,5 +1,5 @@
 FROM silkeh/latex:basic
 
 RUN PATH="$(kpsewhich --var-value SELFAUTOLOC):$PATH" \
-    tlmgr install scheme-context; \
+    tlmgr install scheme-context && \
     tlmgr path add
