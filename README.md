@@ -32,6 +32,9 @@ The tags correspond to the installation schemes:
   > This is the full TeX Live scheme: it installs everything
   > available.
 
+- `pandoc` (3 GB)
+  The `full` image with pandoc.
+
 Additionally, installations from the following distributions:
 
 - `debian`: The full TeX Live installation from Debian stable.

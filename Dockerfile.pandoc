@@ -1,8 +1,8 @@
 FROM silkeh/latex:full
 
-ENV PANDOC_VERSION 2.4
+ENV PANDOC_VERSION 2.9.2
 
-RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux.tar.gz" && \
-    tar xf "pandoc-${PANDOC_VERSION}-linux.tar.gz" && \
+RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz" && \
+    tar xf "pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz" && \
     rsync -r "pandoc-${PANDOC_VERSION}/" /usr/local/ && \
-    rm -r "pandoc-${PANDOC_VERSION}/" "pandoc-${PANDOC_VERSION}-linux.tar.gz"
+    rm -r "pandoc-${PANDOC_VERSION}/" "pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz"
