@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Install dependencies
-RUN apk add bash fontconfig gnupg perl rsync wget xz
+RUN apk add bash fontconfig gnupg libgcc perl rsync wget xz
 
 # Install TeX Live
 COPY install_texlive.sh .
