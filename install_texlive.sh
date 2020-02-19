@@ -21,7 +21,9 @@ wget -q "${REPO}/install-tl-unx.tar.gz"
 tar xf install-tl-unx.tar.gz --strip-components=1
 
 # Install
-./install-tl -profile=texlive.profile
+./install-tl \
+    -profile=texlive.profile \
+    -force-platform=x86_64-linuxmusl
 
 cd /tmp/
 rm -rf /tmp/texlive
