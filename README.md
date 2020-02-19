@@ -5,21 +5,21 @@ Includes plain installations from CTAN without the doc and source files.
 The images are based on `alpine:latest`.
 The tags correspond to the installation schemes:
 
-- `basic` (160 MB)
+- `basic` (220 MB)
   > This is the basic TeX Live scheme: it is a small set of files
   > sufficient to typeset plain TeX or LaTeX documents in
   > PostScript or PDF, using the Computer Modern fonts.  This
   > scheme corresponds to collection-basic and collection-latex.
 
-- `small` (350 MB)
+- `small` (400 MB)
   > This is a small TeX Live scheme, corresponding to MacTeX's
   > BasicTeX variant.  It adds XeTeX, MetaPost, various
   > hyphenations, and some recommended packages to scheme-basic.
 
-- `context` (450 MB)
+- `context` (500 MB)
   > This is the TeX Live scheme for installing ConTeXt.
 
-- `medium` (780 MB)
+- `medium` (800 MB)
   > This is the medium TeX Live collection: it contains plain TeX,
   > LaTeX, many recommended packages, and support for most European
   > languages.
