@@ -4,7 +4,7 @@ REPO="http://mirror.ctan.org/systems/texlive/tlnet/"
 
 # Create temporary installation directory
 mkdir -p /tmp/texlive
-cd /tmp/texlive
+cd /tmp/texlive || return 1
 
 # Create installer configuration
 cat <<EOF >texlive.profile
@@ -25,5 +25,5 @@ tar xf install-tl-unx.tar.gz --strip-components=1
     -profile=texlive.profile \
     -force-platform=x86_64-linuxmusl
 
-cd /tmp/
+cd /tmp/ || return 1
 rm -rf /tmp/texlive

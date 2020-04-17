@@ -1,0 +1,64 @@
+---
+stages:
+  - lint
+  - basic
+  - small
+  - medium
+  - large
+
+yamllint:
+  stage: lint
+  image: pipelinecomponents/yamllint:latest
+  script:
+    - yamllint .
+
+shellcheck:
+  stage: lint
+  image: pipelinecomponents/shellcheck:latest
+  script:
+    - shellcheck *.sh
+
+.build:
+  stage: build
+  image: docker:stable
+  services:
+    - docker:dind
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_JOB_NAME
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+  before_script:
+    - docker info
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build -t $IMAGE_TAG -f Dockerfile.$CI_JOB_NAME .
+    - docker push $IMAGE_TAG
+
+basic:
+  stage: basic
+  extends: .build
+
+small:
+  stage: small
+  extends: .build
+  needs: [basic]
+
+context:
+  stage: small
+  extends: .build
+  needs: [basic]
+
+medium:
+  stage: medium
+  extends: .build
+  needs: [context]
+
+tetex:
+  stage: medium
+  extends: .build
+  needs: [context]
+
+full:
+  stage: large
+  extends: .build
+  needs: [medium]

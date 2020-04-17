@@ -1,4 +1,4 @@
-FROM silkeh/latex:basic
+FROM silkeh/latex:context
 
 RUN PATH="$(kpsewhich --var-value SELFAUTOLOC):$PATH" && \
     tlmgr install scheme-tetex && \
